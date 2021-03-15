@@ -12,5 +12,10 @@
 <p><strong>Первое слагаемое:</strong> ${first_result}</p>
 <p><strong>Второе слагаемое:</strong> ${second_result}</p>
 <p><strong>Результат:</strong> ${result}</p>
+
+<form action="${pageContext.request.contextPath}/Form.jsp">
+    <input type="submit" name="sign" value="Назад">
+    </form>
+
 </body>
 </html>
