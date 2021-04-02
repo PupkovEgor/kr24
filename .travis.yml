@@ -1,6 +1,6 @@
 language: java
 script:
-- mvn clean package
+- mvn package
 deploy:
 - provider: heroku 
 app: pi222team100
