@@ -1,9 +1,4 @@
 language: java
 script:
-- mvn package
-deploy:
-- provider: heroku 
-app: pi222team100
-api_key:
-    secure: eVi8cauUX0kOI/w58Q7TgXr51QIFnym4YM9XSa1qpMe69dMcMxUAuomxgavnMR16b2nwjgH6fWrkqj8fUhPYyfkttdzpj+i/1gt5F7DHB6zIwtgQxibf0k6X24eaeEy9v7dHFkIrWkmNLFcfCsc4A8FxBBC/ZzUICXvHyfktTLbZ5EGNCloY/am79/GBYhtwh0Fz6MbaygX+Pw/D9KqC/0UeBDBTWcMFB+1TmWCVFUTJ84sgTmFHH2NfCiUPVXpp07OVfe6O4jBQrA1gDk+in9adr0X5P+4UH74EMNrRiPHe+cBFNNzl5CeF17P1xC/EWoxG7/FRBvyCWLoqA3cpk3eavCkBeQDCgaWxKmT1uWVyMK+YctV7brSWEDtscJXFsNoHNAacuI//oCtqmytXyzeVb7/yhP1dHylktdrWBpXmshJTlwV5VrbtVSO9uVBIfuDDAjRRxtvjVSUtJirPaR7fLsbBvrMi8zBaJjfcjKe4/9XcDWVAShonhPffM4/iCWDd++GH0AbMs39t5pEtOAHN8STYf8XtP5Q2U/nI49pz/djVG3D1wa34q6d8o8ZBSW/zhwQCip6Xzm9opMYnVkX7sfaM6lY//YDuIwV+vaLR1MTA6itZ4lDcTf+AQHODwrspzU6F6F56QZ0fUExymJZauUcUeb5uKt4Z5BseUco=
-on: master
+- mvn clean package
+
