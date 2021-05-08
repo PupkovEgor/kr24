@@ -13,7 +13,7 @@ import laba4.Napolnitel;
 import laba4.Obivka;
 import laba4.Vidstul;
 
-@WebServlet(name="Calc", urlPatterns="/JavaCalc") //связывание сервлета с URL
+@WebServlet(name="Calc", urlPatterns="/JavaCalc") //СЃРІСЏР·С‹РІР°РЅРёРµ СЃРµСЂРІР»РµС‚Р° СЃ URL
 public class Calc extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
@@ -46,9 +46,9 @@ public class Calc extends HttpServlet {
 			this.cenaOneChair = priceForOneChair;
 			this.vidStula2 = VidStula;
 			if (check == null) {
-				check1 = "Нет";
+				check1 = "пїЅпїЅпїЅ";
 			} else {
-				check1 = "Да";
+				check1 = "пїЅпїЅ";
 			}
 			}
 		
@@ -71,38 +71,38 @@ public class Calc extends HttpServlet {
 			request.setAttribute("five_result", cenaOneChair);
 			request.setAttribute("checked", check1);
 			
-			Karkas Karkasmet = new Karkas(); Karkasmet.setPrice("500"); Karkasmet.setName("Металл");
-			Karkas Karkasderev = new Karkas(); Karkasderev.setPrice("250"); Karkasderev.setName("Дерево");
-			Karkas Karkasplastic = new Karkas(); Karkasplastic.setPrice("100"); Karkasplastic.setName("Пластик");
+			Karkas Karkasmet = new Karkas(); Karkasmet.setPrice("500"); Karkasmet.setName("РњРµС‚Р°Р»Р»");
+			Karkas Karkasderev = new Karkas(); Karkasderev.setPrice("250"); Karkasderev.setName("Р”РµСЂРµРІРѕ");
+			Karkas Karkasplastic = new Karkas(); Karkasplastic.setPrice("100"); Karkasplastic.setName("РџР»Р°СЃС‚РёРє");
 			if (cenaKarkas.equals(Karkasmet.getPrice())) { karkas1 = Karkasmet.getName();}
 			if (cenaKarkas.equals(Karkasderev.getPrice())) { karkas1 = Karkasderev.getName();}
 			if (cenaKarkas.equals(Karkasplastic.getPrice())) { karkas1 = Karkasplastic.getName();}
 			
-			Vidstul GameChair = new Vidstul(); GameChair.setPrice("3000"); GameChair.setName("Игровое кресло");
-			Vidstul OfficeChair = new Vidstul(); OfficeChair.setPrice("2000"); OfficeChair.setName("Офисное кресло");
-			Vidstul Pufik = new Vidstul(); Pufik.setPrice("500"); Pufik.setName("Пуфик");
-			Vidstul KachalkaChair = new Vidstul(); KachalkaChair.setPrice("1500"); KachalkaChair.setName("Кресло-качалка");
-			Vidstul MyagkiyChair = new Vidstul(); MyagkiyChair.setPrice("1000"); MyagkiyChair.setName("Стул с мягкой спинкой");
+			Vidstul GameChair = new Vidstul(); GameChair.setPrice("3000"); GameChair.setName("РРіСЂРѕРІРѕРµ РєСЂРµСЃР»Рѕ");
+			Vidstul OfficeChair = new Vidstul(); OfficeChair.setPrice("2000"); OfficeChair.setName("РћС„РёСЃРЅРѕРµ РєСЂРµСЃР»Рѕ");
+			Vidstul Pufik = new Vidstul(); Pufik.setPrice("500"); Pufik.setName("РџСѓС„РёРє");
+			Vidstul KachalkaChair = new Vidstul(); KachalkaChair.setPrice("1500"); KachalkaChair.setName("РљСЂРµСЃР»Рѕ-РєР°С‡Р°Р»РєР°");
+			Vidstul MyagkiyChair = new Vidstul(); MyagkiyChair.setPrice("1000"); MyagkiyChair.setName("РЎС‚СѓР» СЃ РјСЏРіРєРѕР№ СЃРїРёРЅРєРѕР№");
 			if (vidStula2.equals(GameChair.getPrice())) { stul1 = GameChair.getName();}
 			if (vidStula2.equals(OfficeChair.getPrice())) { stul1 = OfficeChair.getName();}
 			if (vidStula2.equals(Pufik.getPrice())) { stul1 = Pufik.getName();}
 			if (vidStula2.equals(KachalkaChair.getPrice())) { stul1 = KachalkaChair.getName();}
 			if (vidStula2.equals(MyagkiyChair.getPrice())) { stul1 = MyagkiyChair.getName();}
 			
-			Obivka IskKoja = new Obivka();IskKoja.setPrice("500"); IskKoja.setName("Искусственная кожа");
-			Obivka EcoKoja = new Obivka();EcoKoja.setPrice("800"); EcoKoja.setName("Эко-кожа");
-			Obivka Tkan = new Obivka();Tkan.setPrice("550"); Tkan.setName("Ткань");
-			Obivka Zamcha = new Obivka();Zamcha.setPrice("1800"); Zamcha.setName("Замша");
-			Obivka Velvet = new Obivka();Velvet.setPrice("830"); Velvet.setName("Вельвет");
+			Obivka IskKoja = new Obivka();IskKoja.setPrice("500"); IskKoja.setName("РСЃРєСѓСЃСЃС‚РІРµРЅРЅР°СЏ РєРѕР¶Р°");
+			Obivka EcoKoja = new Obivka();EcoKoja.setPrice("800"); EcoKoja.setName("Р­РєРѕ-РєРѕР¶Р°");
+			Obivka Tkan = new Obivka();Tkan.setPrice("550"); Tkan.setName("РўРєР°РЅСЊ");
+			Obivka Zamcha = new Obivka();Zamcha.setPrice("1800"); Zamcha.setName("Р—Р°РјС€Р°");
+			Obivka Velvet = new Obivka();Velvet.setPrice("830"); Velvet.setName("Р’РµР»СЊРІРµС‚");
 			if (cenaObivka.equals(IskKoja.getPrice())) { obivka1 = IskKoja.getName();}
 			if (cenaObivka.equals(EcoKoja.getPrice())) { obivka1 = EcoKoja.getName();}
 			if (cenaObivka.equals(Tkan.getPrice())) { obivka1 = Tkan.getName();}
 			if (cenaObivka.equals(Zamcha.getPrice())) { obivka1 = Zamcha.getName();}
 			if (cenaObivka.equals(Velvet.getPrice())) { obivka1 = Velvet.getName();}
 			
-			Napolnitel Porolon = new Napolnitel();Porolon.setPrice("400"); Porolon.setName("Поролон");
-			Napolnitel Sintepon = new Napolnitel();Sintepon.setPrice("130"); Sintepon.setName("Синтепон");
-			Napolnitel Voylok = new Napolnitel();Voylok.setPrice("2700"); Voylok.setName("Войлок");
+			Napolnitel Porolon = new Napolnitel();Porolon.setPrice("400"); Porolon.setName("РџРѕСЂРѕР»РѕРЅ");
+			Napolnitel Sintepon = new Napolnitel();Sintepon.setPrice("130"); Sintepon.setName("РЎРёРЅС‚РµРїРѕРЅ");
+			Napolnitel Voylok = new Napolnitel();Voylok.setPrice("2700"); Voylok.setName("Р’РѕР№Р»РѕРє");
 			if (cenaNapolnitel.equals(Porolon.getPrice())) { napolnitel1 = Porolon.getName();}
 			if (cenaNapolnitel.equals(Sintepon.getPrice())) { napolnitel1 = Sintepon.getName();}
 			if (cenaNapolnitel.equals(Voylok.getPrice())) { napolnitel1 = Voylok.getName();}
