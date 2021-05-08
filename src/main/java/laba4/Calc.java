@@ -46,9 +46,9 @@ public class Calc extends HttpServlet {
 			this.cenaOneChair = priceForOneChair;
 			this.vidStula2 = VidStula;
 			if (check == null) {
-				check1 = "���";
+				check1 = "Нет";
 			} else {
-				check1 = "��";
+				check1 = "Да";
 			}
 			}
 		
