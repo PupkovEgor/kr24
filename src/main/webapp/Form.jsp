@@ -66,7 +66,7 @@ function myFunction5(e) {
 </p>
     <p><label style="position:relative;left: 34%">Материал наполнителя:</label>
 		<select name="priceNapolnitel" required onchange="myFunction4(event);" style="position:relative;left: 34%;width:6%">
-    <option selected disabled =""></option>
+    <option selected disabled =" "></option>
     <option value="400">Поролон</option>
     <option value="130">Синтепон</option>
     <option value="2700">Войлок</option>
