@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
   <display-name>Калькулятор</display-name>
-  <welcome-file-list>
-    <welcome-file>Form.jsp</welcome-file>
-  </welcome-file-list>
+
+<!--filter check exist session for sign in-->
+    <filter>
+        <filter-name>Filtrator</filter-name>
+        <filter-class>auth.Filtrator</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Filtrator</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+
+    <!--Logout servlet-->
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>auth.Logout</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
 </web-app>

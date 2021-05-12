@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -85,5 +86,6 @@ function myFunction5(e) {
 	<form action="${pageContext.request.contextPath}/Spravka.jsp" method="post">
 	<input style="position:relative;left: 45%" type="submit" value=" Справка ">
 	</form>
+	<a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
 	</body>
 </html>

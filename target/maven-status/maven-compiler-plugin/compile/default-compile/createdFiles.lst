@@ -1,2 +1,13 @@
+auth\UserPut.class
+auth\Filtrator.class
+laba4\Materials.class
 laba4\Calc.class
+auth\Logout.class
+laba4\Karkas.class
+laba4\Obivka.class
+auth\User.class
 laba4\Calc$RequestCalc.class
+laba4\Vidstul.class
+auth\DataBase.class
+auth\User$ROLE.class
+laba4\Napolnitel.class

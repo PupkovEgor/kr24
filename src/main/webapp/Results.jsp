@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,5 +24,6 @@
 <form action="${pageContext.request.contextPath}/Form.jsp">
 	<input type="submit" name="sign" value="Назад">
 	</form>
+<a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
 </body>
 </html>
