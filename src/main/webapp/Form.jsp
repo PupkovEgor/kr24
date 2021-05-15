@@ -37,18 +37,18 @@ function myFunction5(e) {
 <label style="position:relative;left: 45%">Вид стула:</label>
 		<select id="kk" name="VidStula" required onchange="myFunction1(event);" style="position:relative;left: 45%">
     <option selected disabled =""></option>
-    <option value="3000">Игровое кресло</option>
-    <option value="2000">Офисное кресло</option>
-    <option value="500">Пуфик</option>
-    <option value="1500">Кресло-качалка</option>
-    <option value="1000">Стул с мягкой спинкой</option>
+    <option value="${ vid1 }">Игровое кресло</option>
+    <option value="${ vid2 }">Офисное кресло</option> 
+    <option value="${ vid3 }">Пуфик</option>
+    <option value="${ vid4 }">Кресло-качалка</option>
+    <option value="${ vid5 }">Стул с мягкой спинкой</option>
    </select>
   <p><label style="position:relative;left: 34%;">Материал каркаса:</label>
 		<select name="priceKarkas" required onchange="myFunction2(event);"  style="position:relative;left: 34%;width:8%">
     <option selected disabled =""></option>
-    <option value="500">Металл</option>
-    <option value="250">Дерево</option>
-    <option value="100">Пластик</option>
+    <option value="${ kark1 }">Металл</option>
+    <option value="${ kark2 }">Дерево</option>
+    <option value="${ kark3 }">Пластик</option>
    </select>
    <label style="position:relative;left: 38.5%">Стоимость каркаса:</label>
 		<input id="priceKarkas" readonly size="15" style="position:relative;left: 38.5%">
@@ -56,11 +56,11 @@ function myFunction5(e) {
     <p><label style="position:relative;left: 34%">Материал обивки:</label>
 		<select name="priceObivka" required onchange="myFunction3(event);" style="position:relative;left: 34%;width:8%" >
     <option selected disabled =""></option>
-    <option value="500">Искусственная кожа</option>
-    <option value="800">Эко-кожа</option>
-    <option value="550">Ткань</option>
-    <option value="1800">Замша</option>
-    <option value="830">Вельвет</option>
+   <option value="${ obiv1 }">Искусственная кожа</option>
+   <option value="${ obiv2 }">Эко-кожа</option>
+   <option value="${ obiv3 }">Ткань</option>
+   <option value="${ obiv4 }">Замша</option>
+   <option value="${ obiv5 }">Вельвет</option>
    </select> 
    <label style="position:relative;left: 35%">Стоимость материала обивки:</label>
 		<input id="priceObivka" readonly size="15" style="position:relative;left:35%">
@@ -68,9 +68,9 @@ function myFunction5(e) {
     <p><label style="position:relative;left: 34%">Материал наполнителя:</label>
 		<select name="priceNapolnitel" required onchange="myFunction4(event);" style="position:relative;left: 34%;width:6%">
     <option selected disabled =" "></option>
-    <option value="400">Поролон</option>
-    <option value="130">Синтепон</option>
-    <option value="2700">Войлок</option>
+    <option value="${ napoln1 }">Поролон</option>
+    <option value="${ napoln2 }">Синтепон</option>
+    <option value="${ napoln3 }">Войлок</option>
    </select> 
     <label style="position:relative;left: 36.9%">Стоимость наполнителя:</label>
 		<input id="priceNapolnitel"  readonly size="15" style="position:relative;left: 36.9%">

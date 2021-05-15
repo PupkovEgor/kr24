@@ -21,7 +21,7 @@
 <p><strong>Стоимость работы за 1 стул:</strong> ${five_result}</p>
 <p><strong>Срочный заказ:</strong> ${checked}</p>
 <p><strong>Итоговая стоимость:</strong> ${result}</p>
-<form action="${pageContext.request.contextPath}/Form.jsp">
+<form action="${pageContext.request.contextPath}/Read" method="post" >
 	<input type="submit" name="sign" value="Назад">
 	</form>
 <a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>

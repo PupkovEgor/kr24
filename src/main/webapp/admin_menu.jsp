@@ -6,6 +6,7 @@
     <title>ADMIN</title>
 </head>
 <body>
+<form action="${pageContext.request.contextPath}/WriteFile" method="post">
 <h1 style="position:relative;text-align:center">Панель администратора</h1>
 <h3>Стоимость вида стула:</h3>
    <p>Игровой стул:
@@ -44,6 +45,7 @@
    <p>Войлок:
    <input name="nap3" type="number" min="1" max="10000" name="NumberChair"></p>
    <input style="position:relative;left: 45%" type="submit" value="Изменить значения">
+      </form>
   <a href="<c:url value='/logout' />" style="position:relative;left: 45%">Logout</a>
 </body>
 </html>

@@ -1,5 +1,8 @@
 package laba4;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -8,10 +11,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import laba4.Karkas;
-import laba4.Napolnitel;
-import laba4.Obivka;
-import laba4.Vidstul;
+
+import AbstractClass.Karkas;
+import AbstractClass.Napolnitel;
+import AbstractClass.Obivka;
+import AbstractClass.Vidstul;
 
 @WebServlet(name="Calc", urlPatterns="/JavaCalc") //связывание сервлета с URL
 public class Calc extends HttpServlet {
@@ -20,7 +24,6 @@ public class Calc extends HttpServlet {
 		Calc.setAsRequestAttributesAndCalculate(request);
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);
 	}
-	
 	private static class RequestCalc {
 		private final String cenaKarkas;
 		private final String cenaObivka;
@@ -31,7 +34,6 @@ public class Calc extends HttpServlet {
 		private final String vidStula2;
 		private String result;
 		private double result1;
-		
 		private String karkas1;
 		private String stul1;
 		private String obivka1;
@@ -71,38 +73,52 @@ public class Calc extends HttpServlet {
 			request.setAttribute("five_result", cenaOneChair);
 			request.setAttribute("checked", check1);
 			
-			Karkas Karkasmet = new Karkas(); Karkasmet.setPrice("500"); Karkasmet.setName("Металл");
-			Karkas Karkasderev = new Karkas(); Karkasderev.setPrice("250"); Karkasderev.setName("Дерево");
-			Karkas Karkasplastic = new Karkas(); Karkasplastic.setPrice("100"); Karkasplastic.setName("Пластик");
-			if (cenaKarkas.equals(Karkasmet.getPrice())) { karkas1 = Karkasmet.getName();}
-			if (cenaKarkas.equals(Karkasderev.getPrice())) { karkas1 = Karkasderev.getName();}
-			if (cenaKarkas.equals(Karkasplastic.getPrice())) { karkas1 = Karkasplastic.getName();}
-			
-			Vidstul GameChair = new Vidstul(); GameChair.setPrice("3000"); GameChair.setName("Игровое кресло");
-			Vidstul OfficeChair = new Vidstul(); OfficeChair.setPrice("2000"); OfficeChair.setName("Офисное кресло");
-			Vidstul Pufik = new Vidstul(); Pufik.setPrice("500"); Pufik.setName("Пуфик");
-			Vidstul KachalkaChair = new Vidstul(); KachalkaChair.setPrice("1500"); KachalkaChair.setName("Кресло-качалка");
-			Vidstul MyagkiyChair = new Vidstul(); MyagkiyChair.setPrice("1000"); MyagkiyChair.setName("Стул с мягкой спинкой");
+			String num[] = new String[20];
+			try {
+	            File file = new File("program1.txt");
+				 if(file.exists()){				 
+	            BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
+	            for (int i = 0; i < 20; i++) {
+	            	num[i] = br.readLine();
+	            }
+				 }
+		 }
+	        catch (Exception e) {
+	            System.err.println(e.getMessage());
+}
+			Vidstul GameChair = new Vidstul(); GameChair.setPrice(num[0]); GameChair.setName("Игровое кресло");
+			Vidstul OfficeChair = new Vidstul(); OfficeChair.setPrice(num[1]); OfficeChair.setName("Офисное кресло");
+			Vidstul Pufik = new Vidstul(); Pufik.setPrice(num[2]); Pufik.setName("Пуфик");
+			Vidstul KachalkaChair = new Vidstul(); KachalkaChair.setPrice(num[3]); KachalkaChair.setName("Кресло-качалка");
+			Vidstul MyagkiyChair = new Vidstul(); MyagkiyChair.setPrice(num[4]); MyagkiyChair.setName("Стул с мягкой спинкой");
 			if (vidStula2.equals(GameChair.getPrice())) { stul1 = GameChair.getName();}
 			if (vidStula2.equals(OfficeChair.getPrice())) { stul1 = OfficeChair.getName();}
 			if (vidStula2.equals(Pufik.getPrice())) { stul1 = Pufik.getName();}
 			if (vidStula2.equals(KachalkaChair.getPrice())) { stul1 = KachalkaChair.getName();}
 			if (vidStula2.equals(MyagkiyChair.getPrice())) { stul1 = MyagkiyChair.getName();}
 			
-			Obivka IskKoja = new Obivka();IskKoja.setPrice("500"); IskKoja.setName("Искусственная кожа");
-			Obivka EcoKoja = new Obivka();EcoKoja.setPrice("800"); EcoKoja.setName("Эко-кожа");
-			Obivka Tkan = new Obivka();Tkan.setPrice("550"); Tkan.setName("Ткань");
-			Obivka Zamcha = new Obivka();Zamcha.setPrice("1800"); Zamcha.setName("Замша");
-			Obivka Velvet = new Obivka();Velvet.setPrice("830"); Velvet.setName("Вельвет");
+			Karkas Karkasmet = new Karkas(); Karkasmet.setPrice(num[5]); Karkasmet.setName("Металл");
+			Karkas Karkasderev = new Karkas(); Karkasderev.setPrice(num[6]); Karkasderev.setName("Дерево");
+			Karkas Karkasplastic = new Karkas(); Karkasplastic.setPrice(num[7]); Karkasplastic.setName("Пластик");
+			if (cenaKarkas.equals(Karkasmet.getPrice())) { karkas1 = Karkasmet.getName();}
+			if (cenaKarkas.equals(Karkasderev.getPrice())) { karkas1 = Karkasderev.getName();}
+			if (cenaKarkas.equals(Karkasplastic.getPrice())) { karkas1 = Karkasplastic.getName();}
+			
+			
+			Obivka IskKoja = new Obivka();IskKoja.setPrice(num[8]); IskKoja.setName("Искусственная кожа");
+			Obivka EcoKoja = new Obivka();EcoKoja.setPrice(num[9]); EcoKoja.setName("Эко-кожа");
+			Obivka Tkan = new Obivka();Tkan.setPrice(num[10]); Tkan.setName("Ткань");
+			Obivka Zamcha = new Obivka();Zamcha.setPrice(num[11]); Zamcha.setName("Замша");
+			Obivka Velvet = new Obivka();Velvet.setPrice(num[12]); Velvet.setName("Вельвет");
 			if (cenaObivka.equals(IskKoja.getPrice())) { obivka1 = IskKoja.getName();}
 			if (cenaObivka.equals(EcoKoja.getPrice())) { obivka1 = EcoKoja.getName();}
 			if (cenaObivka.equals(Tkan.getPrice())) { obivka1 = Tkan.getName();}
 			if (cenaObivka.equals(Zamcha.getPrice())) { obivka1 = Zamcha.getName();}
 			if (cenaObivka.equals(Velvet.getPrice())) { obivka1 = Velvet.getName();}
 			
-			Napolnitel Porolon = new Napolnitel();Porolon.setPrice("400"); Porolon.setName("Поролон");
-			Napolnitel Sintepon = new Napolnitel();Sintepon.setPrice("130"); Sintepon.setName("Синтепон");
-			Napolnitel Voylok = new Napolnitel();Voylok.setPrice("2700"); Voylok.setName("Войлок");
+			Napolnitel Porolon = new Napolnitel();Porolon.setPrice(num[13]); Porolon.setName("Поролон");
+			Napolnitel Sintepon = new Napolnitel();Sintepon.setPrice(num[14]); Sintepon.setName("Синтепон");
+			Napolnitel Voylok = new Napolnitel();Voylok.setPrice(num[15]); Voylok.setName("Войлок");
 			if (cenaNapolnitel.equals(Porolon.getPrice())) { napolnitel1 = Porolon.getName();}
 			if (cenaNapolnitel.equals(Sintepon.getPrice())) { napolnitel1 = Sintepon.getName();}
 			if (cenaNapolnitel.equals(Voylok.getPrice())) { napolnitel1 = Voylok.getName();}

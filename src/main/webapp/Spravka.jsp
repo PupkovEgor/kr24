@@ -12,7 +12,7 @@
 <p><strong>Первый участник: Шамсутдинов Руслан Маратович - 19130342</strong></p>
 <p><strong>Второй участник: Денисов Никита Андреевич - 19130174</strong></p>
 <p><strong>Третий участник: Леонтьев Владимир Алексеевич - 19130155</strong></p>
-<form action="${pageContext.request.contextPath}/Form.jsp">
+<form action="${pageContext.request.contextPath}/Read" method="post">
 	<input type="submit" name="sign" value="Назад">
 	</form>
 </body>
