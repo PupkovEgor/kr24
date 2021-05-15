@@ -4,6 +4,9 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import laba4.ReadFile;
+
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -74,7 +77,8 @@ public class Filtrator implements Filter {
 
         } else if (role.equals(User.ROLE.USER)) {
 
-            req.getRequestDispatcher("/Form.jsp").forward(req, res);
+        	ReadFile read = new ReadFile();
+        	read.doPost(req, res);
 
         } else {
 
