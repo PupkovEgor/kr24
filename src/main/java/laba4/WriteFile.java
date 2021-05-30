@@ -17,11 +17,17 @@ import AbstractClass.Karkas;
 @WebServlet(name="WriteFile", urlPatterns="/WriteFile") 
 public class WriteFile extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
-		Calc.setAsRequestAttributesAndCalculate(request);
-		response.sendRedirect(request.getContextPath() + "/admin_menu.jsp");
+		if (request.getSession().getAttribute("loginADMIN") == "admin") {
+			RequestCalc Calc = RequestCalc.fromRequestParameters(request);
+			Calc.setAsRequestAttributesAndCalculate(request);
+		    response.sendRedirect(request.getContextPath() + "/admin_menu.jsp");
+			}
+			else {
+				request.getRequestDispatcher("/NotAuth.jsp").forward(request, response);
+			}
 	}
 	static String num[] = new String[20];
+	static String num2[] = new String[20];
 	private static class RequestCalc {
 		private final String st1;
 		private final String st2;
@@ -81,11 +87,36 @@ public class WriteFile extends HttpServlet {
 			 try {
 		            File file = new File("program1.txt");
 					 if(file.exists()){
+						 BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
+						 for (int i = 0; i < 20; i++) {
+				            	num[i] = br.readLine();
+				            }
+						 num2[0] = st1;
+						 num2[1] = st2;
+						 num2[2] = st3;
+						 num2[3] = st4;
+						 num2[4] = st5;
+						 num2[5] = kar1;
+						 num2[6] = kar2;
+						 num2[7] = kar3;
+						 num2[8] = o1;
+						 num2[9] = o2;
+						 num2[10] = o3;
+						 num2[11] = o4;
+						 num2[12] = o5;
+						 num2[13] = napol1;
+						 num2[14] = napol2;
+						 num2[15] = napol3;
+						 for (int i = 0; i < 20; i++) {
+								if (num2[i] == "") {
+				            		num2[i] = num[i];
+				            }
+						 }
 						 PrintWriter zapis = new PrintWriter(file.getAbsoluteFile());
 						 try {
-							 zapis.write(st1 + "\n" + st2 + "\n" + st3 + "\n" + st4 + "\n" + st5 + "\n" +
-									 kar1 + "\n" + kar2 + "\n" + kar3 + "\n" + o1 + "\n" + o2 + "\n" +
-									 o3 + "\n" + o4 + "\n" + o5 + "\n" + napol1 + "\n" + napol2 + "\n" + napol3);
+							 zapis.write(num2[0] + "\n" + num2[1] + "\n" + num2[2] + "\n" + num2[3] + "\n" + num2[4] + "\n" +
+									 num2[5] + "\n" + num2[6] + "\n" + num2[7] + "\n" + num2[8] + "\n" + num2[9] + "\n" +
+									 num2[10] + "\n" + num2[11] + "\n" + num2[12] + "\n" + num2[13] + "\n" + num2[14] + "\n" + num2[15]);
 					        }
 					        finally {
 					        	zapis.close();
@@ -102,10 +133,6 @@ public class WriteFile extends HttpServlet {
 					            zapis.close();
 					        }
 					 }
-		            BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
-		            for (int i = 0; i < 20; i++) {
-		            	num[i] = br.readLine();
-		            }
 			 }
 		        catch (Exception e) {
 		            System.err.println(e.getMessage());
