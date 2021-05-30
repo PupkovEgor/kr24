@@ -18,7 +18,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class CreatePDF {
 	
 	public String filepath;
-	public String file1 ;
+	public String file1;
+	public String CellGet;
 
 	    public void Create(String numberpdf) throws IOException {
             Document document = new Document(); 
@@ -94,7 +95,7 @@ public class CreatePDF {
 	    }
 	    
 
-	private void addColumns(PdfPTable table) {
+	public void addColumns(PdfPTable table) {
 		BaseFont times = null;
 		try {
 			times = BaseFont.createFont(file1 + "/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
@@ -126,6 +127,8 @@ public class CreatePDF {
 		String cell22 = "";
 		String cell23 = "ИТОГО:";
 		String cell24 = Calc.Summa;
+		
+		CellGet = cell4;
 		
 		table.addCell(new Phrase(cell1, new Font(times,14)));	
 		table.addCell(new Phrase(cell2, new Font(times,14)));	
