@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name="Read", urlPatterns="/Read") //���������� �������� � URL
+@WebServlet(name="Read", urlPatterns="/Read")
 public class ReadFile extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		read(request);

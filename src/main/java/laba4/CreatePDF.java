@@ -21,7 +21,7 @@ public class CreatePDF {
 	public String file1 ;
 
 	    public void Create(String numberpdf) throws IOException {
-            Document document = new Document(); //ñîçäàíèå êëàññà Document
+            Document document = new Document(); 
 			try {
 				File file = new File(CreatePDF.class.getProtectionDomain().getCodeSource().getLocation().toURI());
 				file1 = new File(file.getParent()).getParent();
@@ -58,7 +58,7 @@ public class CreatePDF {
 				e1.printStackTrace();
 			}
 		    
-		  //îðãàíèçàöèÿ ïåðåõîäà íà ñëåäóþùóþ ñòðîêó
+		  
 			 paragraph.clear();
 			 String string_pdf3 = " ";
 			 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
@@ -70,7 +70,7 @@ public class CreatePDF {
 				}
 		    
 		    
-			 //îðãàíèçàöèÿ ïåðåõîäà íà ñëåäóþùóþ ñòðîêó
+			 
 			 paragraph.clear();
 			 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
 			 
@@ -81,8 +81,8 @@ public class CreatePDF {
 				}
 	    
 	 
-			//äîáàâëåíèå òàáëèöû
-			 PdfPTable table = new PdfPTable(3); //ñîçäàíèå òàáëèöû ñ 4 ñòîëáöàìè
+			
+			 PdfPTable table = new PdfPTable(3); 
 			 addColumns(table);
 			 try {
 				document.add(table);
@@ -90,7 +90,7 @@ public class CreatePDF {
 				e.printStackTrace();
 			}
 		    
-		    document.close(); //çàêðûòèå è ñîõðàíåíèå äîêóìåíòà PDF
+		    document.close(); 
 	    }
 	    
 
@@ -101,7 +101,7 @@ public class CreatePDF {
 		} catch (DocumentException | IOException e) {
 			e.printStackTrace();
 		}
-			//çàïîëíåíèå òàáëèöû ââîäèìûìè çíà÷åíèÿ â òåêñòîâûå ïîëÿ íà ãëàâíîé ôîðìå
+			
 		String cell1 = "";
 		String cell2 = "Вид";
 		String cell3 = "Цена (руб)";
@@ -153,7 +153,7 @@ public class CreatePDF {
 		table.addCell(new Phrase(cell24, new Font(times,14)));	
 		    
 			
-		    //âûøå äîëæåí áûòü òåêñò íà ðóññêîì ÿçûêå, êàê åãî âûâåñòè ìîæíî ïîñìîòðåòü â ñïðàâêå.
+		    
 		}
 	}
 
