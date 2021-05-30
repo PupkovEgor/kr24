@@ -12,7 +12,7 @@ import static auth.User.ROLE.USER;
 @WebListener
 public class DataBase implements ServletContextListener {
 
-    private AtomicReference<UserPut> useres;
+    public AtomicReference<UserPut> useres;
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
