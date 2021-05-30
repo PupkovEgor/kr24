@@ -1,6 +1,8 @@
 package auth;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,10 +14,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static java.util.Objects.nonNull;
 
-
  //Acidification filter.
- 
-public class Filtrator implements Filter {
+public class Filtrator implements Filter  {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -72,16 +72,15 @@ public class Filtrator implements Filter {
 
 
         if (role.equals(User.ROLE.ADMIN)) {
-
+        	req.getSession().setAttribute("loginADMIN", "admin");
             req.getRequestDispatcher("/admin_menu.jsp").forward(req, res);
 
         } else if (role.equals(User.ROLE.USER)) {
-
+        	req.getSession().setAttribute("loginUSER", "user");
         	ReadFile read = new ReadFile();
         	read.doPost(req, res);
 
         } else {
-
             req.getRequestDispatcher("/login.jsp").forward(req, res);
         }
     }

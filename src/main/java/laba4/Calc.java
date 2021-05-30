@@ -33,14 +33,17 @@ public class Calc extends HttpServlet {
 	public static String Summa;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
-		Calc.setAsRequestAttributesAndCalculate(request);
+		if (request.getSession().getAttribute("loginUSER") == "user") {
+			RequestCalc Calc = RequestCalc.fromRequestParameters(request);
+			Calc.setAsRequestAttributesAndCalculate(request);
+			CreatePDF PDF = new CreatePDF();
+			String goals = "Hello";
+			PDF.Create(goals);
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);
-			
-		CreatePDF PDF = new CreatePDF();
-		String goals = "Hello";
-		PDF.Create(goals);
-	
+		}
+		else {
+			request.getRequestDispatcher("/NotAuth.jsp").forward(request, response);
+		}
 	}
 	private static class RequestCalc {
 		private final String cenaKarkas;

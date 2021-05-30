@@ -20,8 +20,10 @@ public class Logout extends HttpServlet {
         session.removeAttribute("password");
         session.removeAttribute("login");
         session.removeAttribute("role");
+        session.removeAttribute("loginUSER");
+        session.removeAttribute("loginADMIN");
 
-        resp.sendRedirect("/");
+        resp.sendRedirect(req.getContextPath() + "/");
 
     }
 
