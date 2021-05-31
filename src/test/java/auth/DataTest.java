@@ -8,8 +8,8 @@ public class DataTest {
 
 	@Test
 	public void test() {
-		DataBase bus = new DataBase();
-		assertNull(bus.useres);
+		UserPut bus = new UserPut();
+		assertNull(bus.store);
 	}
 
 }
