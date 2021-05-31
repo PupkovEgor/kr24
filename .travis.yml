@@ -2,8 +2,7 @@ deploy:
   provider: heroku
   api_key:
     secure: SXmvO52w9VtCeTjzN9bH6plQRHEtLWksbUD4yGSzemWxdnqEpDXrVDREZaZqbf4RT0E851OlyN9sAvbWVujS6v+KgfaDCU4S8IX79kXDzhENZpWf9Wzm2aTR+3Ln7WwxcYuGSoyxFiKFOb6s2fmNFOHdvkUFP1p/PZa0vcB5KA6/o2YFePfL3Tagn4WbFkM7bKoXb1ZjX33A8Beo6zEO82aLMkVlcBIfuCfWtBBSIM6BNttxSM2zeEiV9G7kgFzQY+azdkieu16Na5S0vW6lA1RW0/5ql4QpQeHeiM+7WLUf2y0yGKMZe0miajkWOOIhChiW1dvvEtBM0QUyxTg8psurEGPc142YiPppR2iRYWEapjbn//erRIiC/vDzHz7nzzHt5W+8wUoOi3zgY7ELL12RXpZXFwi8vtngLOVAlvdG48WqB2RYENeIXfHSaV04896NpvfqQ/X20uEoboB+t7CId140j5f7Ze1e+TCunLPcwyTDvYLA05GYb2Udf9Q3w1iLGWCtZIJfmb3Kq7Te+JPMuQJ0jid/aMf0AGYdsAZKDmgDiA+HHCviK/Djbazl1nSuHJ+qJHoYcSpfn+cq8RVmbAaGfLXt+Uqvfov2Ql+uSILB/PCwMTrMLi+YfzDcgthkzVAoHvGlsn0qunx8Qb5KqJyHzUmFVSh68UCJx5o=
-    app:
-    master: kr24
+    app: kr24
 language: java
 script:
 - mvn clean package
