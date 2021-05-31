@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UserPut {
 
-    public final List<User> store = new ArrayList<>();
+    private final List<User> store = new ArrayList<>();
 
     public User getUserByLoginPassword(final String login, final String password) {
 
