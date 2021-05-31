@@ -3,4 +3,4 @@ KR24
 [![Build Status](https://travis-ci.com/PupkovEgor/KR24.svg?branch=master)](https://travis-ci.com/PupkovEgor/KR24)
 
 
-https://kr24.herokuapp.com/
+[Приложение](https://kr24.herokuapp.com)
